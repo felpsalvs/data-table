@@ -3,47 +3,70 @@
 @tailwind utilities;
 
 @layer components {
+  /* th, td { white-space: nowrap; }
   div.dataTables_wrapper {
-    width: 800px;
-    margin: 0 auto;
+      margin: 0 auto;
+  } */
+
+  div.container {
+      width: 80%;
+  }
+  .table {
+    @apply font-sans table-fixed border-none border-collapse;
+  }
+  
+  .table thead {
+    @apply font-bold text-base border-b border-slate-200;
+  }
+
+  .table tbody {
+    @apply text-slate-600 text-sm;
+  }
+
+  .table-striped tr {
+    @apply odd:bg-white even:bg-slate-100 border-none;
+  }
+
+  .dataTables_wrapper td, .dataTables_wrapper th {
+    @apply border-0 
+  }
+
+  .dataTables_wrapper {
+    @apply max-w-[646px] mx-auto;
+  }
+
+  .dataTables_filter {
+    @apply w-full max-w-[240px] mb-2;
   }
 
   .dataTables_filter input {
-    @apply placeholder:text-slate-400 block bg-white border border-slate-300 rounded-md py-2 px-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm;
+    @apply h-10 border border-slate-300 p-4 rounded;
   }
 
+  .dataTables_length,
   .dataTables_info {
-    @apply text-green-600;
+    @apply hidden;
   }
 
   .dataTables_paginate {
-    @apply text-green-600;
-}
-
-.dataTables_length{
-  @apply text-green-600;
-}
-
-  .customers {
-    border-collapse: collapse;
-    width: 100%;
+    @apply flex justify-center mt-6;
   }
 
-  .customers td,
-  .customers th {
-    padding: 8px;
-    color: #475569;
+  .dataTables_paginate span {
+    @apply flex;
   }
 
-  .customers tr:nth-child(odd) {
-    background-color: #f1f5f9;
+  .paginate_button.previous, 
+  .paginate_button.next {
+    @apply hidden;
   }
 
-  .customers th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: white;
-    color: black;
+  .paginate_button {
+    @apply flex justify-center items-center text-slate-600 rounded-2xl h-8 w-8 cursor-pointer;
   }
+
+  .paginate_button.current {
+    @apply bg-green-600 text-white;
+  }
+
 }
