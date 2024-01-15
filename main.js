@@ -34,6 +34,7 @@ function checkTable(table) {
         language: {
           ...languagePTBR,
           search: "",
+          searchPlaceholder: "Buscar posto de saúde"
         },
       });
 
